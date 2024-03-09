@@ -7,8 +7,9 @@ pipeline
             {
                 steps 
                 {
-                    build 'PES2UG21CS294-1'
-                    sh 'g++ main.cpp-o output'
+                    sh'mvn clean install'
+                    //build 'PES2UG21CS294-1'
+                    //sh 'g++ main.cpp-o output'
                 }
 
             }
@@ -17,7 +18,8 @@ pipeline
             {
                 steps 
                 {
-                    sh'./\output'
+                    sh'mvn test'
+                    //sh'./\output'
                 }
             }
 
@@ -25,7 +27,8 @@ pipeline
             {
                 steps 
                 {
-                    echo 'deploy'
+                    sh'mvn deploy'
+                    //echo 'deploy'
                 }
             }
 
