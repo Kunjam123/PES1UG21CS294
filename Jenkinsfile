@@ -8,8 +8,7 @@ pipeline
                 steps 
                 {
                     sh'mvn clean install'
-                    //build 'PES2UG21CS294-1'
-                    //sh 'g++ main.cpp-o output'
+                    echo 'Build successful'
                 }
 
             }
@@ -19,6 +18,14 @@ pipeline
                 steps 
                 {
                     sh'mvn test'
+                    echo 'Test successful'
+                    post 
+                    {
+                        always
+                        {
+                            junit 'target/surefire-reports/*.xml'
+                        }
+                    }
                     //sh'./\output'
                 }
             }
@@ -28,7 +35,7 @@ pipeline
                 steps 
                 {
                     sh'mvn deploy'
-                    //echo 'deploy'
+                    echo 'deploy successful'
                 }
             }
 
