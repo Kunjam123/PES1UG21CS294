@@ -8,7 +8,7 @@ pipeline {
                     // Compile .cpp file using a shell script
                     build 'PES1UG21CS294-1'
                     //sh 'g++ hello.cpp -o output'
-                    echo 'build successful'
+                    echo ''build successful'
                 }
             }
         }
