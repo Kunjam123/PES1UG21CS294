@@ -7,7 +7,7 @@ pipeline {
                 script {
                     // Compile .cpp file using a shell script
                     build 'PES1UG21CS294-1'
-                    sh 'g++ -o output.exe main.cpp'
+                    sh 'g++ main.cpp -o output'
                     echo 'build successful'
                 }
             }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Execute the compiled .cpp file and print output
-                    sh './output.exe'
+                    sh './output'
                     echo 'test successful'
                 }
             }
