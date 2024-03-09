@@ -18,12 +18,14 @@ pipeline {
                 script {
                     // Execute the compiled .cpp file and print output
                     sh './output.exe'
+                    echo 'test successful'
                 }
             }
         }
 
         stage('Deploy') {
             steps {
+                echo 'deploy successful'
                 // Your deployment steps here
             }
         }
